@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <title>Mercado de valores de acciones</title>
+    </head>
+    <header>
+        <nav class="options">
+            <ul>
+                <button type="button">IntraDay</button>
+                <button type="button">Daily</button>
+                <button type="button">Weekly</button>
+                <button type="button">Monthly</button>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <div class="search_stock">
+            <h1>Searched Stock:</h1>
+            <p data-bind="text: id"></p>
+        </div>
+        <div class="stock_chart">
+            <div id="chart" style="width:50%; height:300px; margin:0 auto;" >
+            </div>
+        </div>
+        <div  class="stock_table">
+            <p class="title_table">historical prices</p>
+            <table data-bind="with: table" class="table">
+                <thead>
+                    <tr data-bind="foreach: labels">
+                        <th data-bind="text: $data"></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: values">
+                    <tr data-bind="foreach: $data">
+                        <th data-bind="text: $data"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="./js/lib/knockout-3.2.0.js"></script>
+        <script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        <script src="./js/consultScript.js"></script>
+    </body>
+</html>

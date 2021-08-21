@@ -7,13 +7,12 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class HttpConnection{
+public abstract class HttpStockService{
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=fb&apikey=0OZUG5LOLD7C1F9N";
 
-    public static String getFBData() throws IOException{
-        String stringResponse;
-        URL obj = new URL(GET_URL);
+    public String timeSeriesDaily() throws IOException{
+        String stringResponse = "None";
+        URL obj = new URL(getURL());
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
@@ -35,11 +34,13 @@ public class HttpConnection{
 
             // print result
             stringResponse = response.toString();
-            System.out.println(stringResponse);
         } else {
             stringResponse = "GET request not worked";
         }
-        System.out.println("GET DONE");
         return stringResponse;
     }
+
+    public abstract String getURL();
+
+    public abstract void setStock(String stock);
 }

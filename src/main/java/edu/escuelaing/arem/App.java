@@ -4,6 +4,9 @@ import spark.Response;
 import static spark.Spark.*;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Hello world!
  *
@@ -18,16 +21,21 @@ public class App {
         port(getPort());
         // root is 'src/main/resources', so put files in 'src/main/resources/public'
         staticFiles.location("/public"); // Static files
-        get("/getfb", (req, res) -> getFBData(req, res));
+        get("/consult", "application/json", (req, res) -> consultAPI(req, res));
     }
 
-    private static String getFBData(Request req, Response res){
+    private static String consultAPI(Request req, Response res){
+        res.type("application/json");
+        String stock = req.queryParams("id");
         String response = "None";
+        HttpStockService stockService = CurrentServiceInstance.getInstance().getService();
+        if(stock != null && !stock.equals("")){
+            stockService.setStock(stock);
+        }
         try {
-            response = HttpConnection.getFBData();
+            response = stockService.timeSeriesDaily();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
         }
         return response;
     }
