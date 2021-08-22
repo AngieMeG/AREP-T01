@@ -4,14 +4,25 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <title>Mercado de valores de acciones</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="preload" href="css/indexStyles.css" as="style">
+        <link href="css/indexStyles.css" rel="stylesheet">
+        <title>Stonk Consult</title>
     </head>
     <body>
-        <h1> Consulta valores de las acciones negociadas en la bolsa </h1>
-        <label>Identificador de acción: </label>
-        <input type="text" id="identifier" placeholder="MST"><br>
-        <button type="submit" id="submit">Try it out!</button>
+        <div class="container">
+            <div class="header"> <img src="img/icon.png"> <p class="title">consult stonck</p></div>
+            <div class="input">
+                <div class="info">
+                    <label>Identifier: </label>
+                    <input type="text" id="identifier" placeholder="MSFT"><br>
+                </div>
+                <button type="submit" id="submit">Let's try!</button>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="./js/indexScript.js"></script>
     </body>
 </html>

@@ -1,0 +1,110 @@
+:root{
+    --main-bg--color: #ffffff;
+    --complement-bg--color: #9663f3;
+    --border--color: #8badcd;
+    --title--color: #342a6b;
+    --label--color: #27263d;
+    --button--color: #ff4a73;
+}
+
+html{
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
+body{
+    margin: 10% 10% 10% 10%;
+    background-color: var(--main-bg--color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239663f3' fill-opacity='0.89'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.container{
+    transition: 0.3s;
+    box-shadow: var(--border--color) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    background-color: var(--main-bg--color);
+    border-radius: 3%;
+    padding: 5% 5% 5% 5%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    padding-bottom: 2%;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+img{
+    border-radius: 10%;
+    width: 15%;
+    height: auto;
+}
+
+.title{
+    font-weight: bold;
+    height: auto;
+    font-size: 50px;
+    letter-spacing: 3px;
+    padding-top: 5%;
+    font-style: bold;
+    color: var(--title--color);
+    text-transform: uppercase;
+}
+
+label{
+    font-size: 30px;
+    font-style: italic;
+    color: var(--label--color);
+    padding-right: 2%;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input{
+    border: none;
+    outline: none;
+    border-bottom:1px solid #cbcbcf;
+    width: 30%;
+    font-size: 30px;
+    color: var(--title--color);
+}
+
+input:focus{
+    border-bottom: 3px solid;
+    border-color: #342a6b;
+
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+button{
+    margin-left: 40%;
+    margin-right: 40%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    height: 30px;
+    border-radius: 12px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: var(--button--color);
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    height: auto;
+}
+
+button:active{
+    background-color: #e34368 ;
+    border: none;
+    transform: translateY(4px);
+}

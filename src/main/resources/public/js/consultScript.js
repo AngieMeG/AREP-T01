@@ -46,7 +46,7 @@ function drawChart(){
             valueFormatString: "DD MMM YYYY",
         },
         axisY: {
-            titleFontSize: 24
+            titleFontSize: 50
         },
         data: [{
             type: "spline", 
@@ -54,7 +54,6 @@ function drawChart(){
             dataPoints: dataPoints
         }]
     };
-    console.log();
     addData(infoStock[Object.keys(infoStock)[1]], options, dataPoints);
 }
 

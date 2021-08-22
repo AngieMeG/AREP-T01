@@ -1,0 +1,90 @@
+:root{
+    --main-bg--color: #e3edf9;
+    --title--color: #342a6b;
+    --label--color: #27263d;
+    --row11--color: #ff4a73;
+    --row12--color: #3193f3;
+}
+
+html{
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
+body{
+    width: 100vw; height: 100vh;
+    margin: 0;
+    background-color: var(--main-bg--color);
+}
+
+
+button{
+    background-color: transparent;
+    font-size: 2em;
+    margin-top: 1em;
+    padding: 1% 4% 1% 4%;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.container{
+    padding: 4%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: larger;
+    color: var( --title--color);
+}
+
+p{
+    font-size: 3em;
+    font-weight: bolder;
+}
+
+#chart{
+    margin: 5% auto 5% 13%;
+}
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+/* https://codepen.io/florantara/pen/dROvdb */
+.table{
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+    color: var(--label--color);
+}
+
+.table td, .table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+.table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.table tr:nth-child(even) {
+    background: #F8F8F8;
+}
