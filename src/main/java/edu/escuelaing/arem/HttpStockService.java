@@ -10,9 +10,14 @@ import java.net.URL;
 public abstract class HttpStockService{
     private static final String USER_AGENT = "Mozilla/5.0";
 
-    public String timeSeriesDaily() throws IOException{
+    public String timeSeries(String variation) throws IOException{
         String stringResponse = "None";
-        URL obj = new URL(getURL());
+        String url = "";
+        if(variation.equals("Daily")) url = getDailyURL();
+        else if(variation.equals("IntraDay")) url = getIntraDayURL();
+        else if(variation.equals("Weekly")) url = getWeeklyURL();
+        else if(variation.equals("Monthly")) url = getMonthlyURL();
+        URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
@@ -40,7 +45,13 @@ public abstract class HttpStockService{
         return stringResponse;
     }
 
-    public abstract String getURL();
+    public abstract String getDailyURL();
+
+    public abstract String getIntraDayURL();
+
+    public abstract String getWeeklyURL();
+
+    public abstract String getMonthlyURL();
 
     public abstract void setStock(String stock);
 }

@@ -1,9 +1,13 @@
 :root{
     --main-bg--color: #e3edf9;
     --title--color: #342a6b;
+    --header--color: #4FC3A1;
+    --active--color: #3c8e76;
+    --active--text--color: #d4539;
     --label--color: #27263d;
-    --row11--color: #ff4a73;
-    --row12--color: #3193f3;
+    --row11--color: #4FC3A1;
+    --row12--color: #324960;
+    --button--color: #ff4a73;
 }
 
 html{
@@ -18,13 +22,23 @@ body{
 
 
 button{
-    background-color: transparent;
+    background-color: var(--header--color);
     font-size: 2em;
     margin-top: 1em;
     padding: 1% 4% 1% 4%;
     color: white;
     font-weight: bold;
     border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    color: black;    
+}
+
+.active{
+    border-bottom: var(--active--color) solid;
+    color: var(--active--text--color);
 }
 
 .container{
@@ -87,4 +101,21 @@ p{
 
 .table tr:nth-child(even) {
     background: #F8F8F8;
+}
+
+#submit {
+    border-radius: 12px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: var(--button--color);
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    height: auto;
+    cursor: pointer;
+}
+
+#submit:active{
+    background-color: #e34368 ;
+    border: none;
+    transform: translateY(4px);
 }

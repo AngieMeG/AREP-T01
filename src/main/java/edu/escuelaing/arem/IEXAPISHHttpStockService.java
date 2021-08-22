@@ -5,7 +5,7 @@ public class IEXAPISHHttpStockService extends HttpStockService {
     String stock = "fb";
     
     @Override
-    public String getURL() {
+    public String getDailyURL() {
         return "https://cloud.iexapis.com/stable/tops?token=YOUR_TOKEN_HERE&symbols="+stock;
     }
 
@@ -14,5 +14,22 @@ public class IEXAPISHHttpStockService extends HttpStockService {
         this.stock = stock;
         
     }
-    
+
+    @Override
+    public String getIntraDayURL() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String getWeeklyURL() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String getMonthlyURL() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
