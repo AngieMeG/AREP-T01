@@ -1,6 +1,9 @@
 :root{
     --main-bg--color: #e3edf9;
     --title--color: #342a6b;
+    --header--color: #4FC3A1;
+    --active--color: #3c8e76;
+    --active--text--color: #d4539;
     --label--color: #27263d;
     --row11--color: #ff4a73;
     --row12--color: #3193f3;
@@ -18,13 +21,23 @@ body{
 
 
 button{
-    background-color: transparent;
+    background-color: var(--header--color);
     font-size: 2em;
     margin-top: 1em;
     padding: 1% 4% 1% 4%;
     color: white;
     font-weight: bold;
     border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    color: black;    
+}
+
+.active{
+    border-bottom: var(--active--color) solid;
+    color: var(--active--text--color);
 }
 
 .container{

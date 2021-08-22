@@ -27,13 +27,14 @@ public class App {
     private static String consultAPI(Request req, Response res){
         res.type("application/json");
         String stock = req.queryParams("id");
+        String variation = req.queryParams("var");
         String response = "None";
         HttpStockService stockService = CurrentServiceInstance.getInstance().getService();
         if(stock != null && !stock.equals("")){
             stockService.setStock(stock);
         }
         try {
-            response = stockService.timeSeriesDaily();
+            response = stockService.timeSeries(variation);
         } catch (IOException e) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
         }
