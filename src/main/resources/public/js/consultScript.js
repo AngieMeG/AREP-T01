@@ -63,6 +63,7 @@ var ViewModel = function () {
         drawChart();
     }
 }
+
 function drawChart(){
     var dataPoints = [];
     var options =  {
@@ -88,6 +89,7 @@ function drawChart(){
 
 function addData(data, options, dataPoints) {
     for(let date of Object.keys(data)){
+        console.log(data[date][Object.keys(data[date])[3]]);
         dataPoints.push({
             x: new Date(date),
             y: parseFloat(data[date][Object.keys(data[date])[3]])
