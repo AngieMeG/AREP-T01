@@ -8,22 +8,30 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Hello world!
- *
+ * Java Spark Client
+ * @author Angie Medina
+ * @version 2.0
  */
 public class App {
     /**
      * This main method uses SparkWeb static methods and lambda functions to
-     * create a simple Hello World web app. It maps the lambda function to the
-     * /hello relative URL.
+     * create a simple web app. It maps the lambda function to the
+     * /consult relative URL having a response parsed to JSON
      */
-    public static void main( String[] args ){
+    public static void main(String[] args){
         port(getPort());
         // root is 'src/main/resources', so put files in 'src/main/resources/public'
         staticFiles.location("/public"); // Static files
         get("/consult", "application/json", (req, res) -> consultAPI(req, res));
     }
 
+    /**
+     * This method extracts the parameters of the request and using a http service
+     * consults an api
+     * @param req request of the /consult relative URL
+     * @param res parsed to JSON response for a certain request
+     * @return The corresponding output of the conu
+     */
     private static String consultAPI(Request req, Response res){
         res.type("application/json");
         String stock = req.queryParams("id");

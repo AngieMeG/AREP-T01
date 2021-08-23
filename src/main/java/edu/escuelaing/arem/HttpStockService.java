@@ -7,17 +7,25 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Http Service that consults with an url (relative to an api)
+ * makes a connection and gets a response
+ * @author Angie Medina
+ * @version 3.0
+ */
 public abstract class HttpStockService{
     private static final String USER_AGENT = "Mozilla/5.0";
+    String stock = "fb";
 
+    /**
+     * 
+     * @param variation Especific resolution to consult in the api 
+     * @return The response of the api to the searc
+     * @throws IOException
+     */
     public String timeSeries(String variation) throws IOException{
         String stringResponse = "None";
-        String url = "";
-        if(variation.equals("Daily")) url = getDailyURL();
-        else if(variation.equals("IntraDay")) url = getIntraDayURL();
-        else if(variation.equals("Weekly")) url = getWeeklyURL();
-        else if(variation.equals("Monthly")) url = getMonthlyURL();
-        URL obj = new URL(url);
+        URL obj = new URL(resolveRequest(variation));
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
@@ -36,8 +44,6 @@ public abstract class HttpStockService{
                 response.append(inputLine);
             }
             in.close();
-
-            // print result
             stringResponse = response.toString();
         } else {
             stringResponse = "GET request not worked";
@@ -45,13 +51,18 @@ public abstract class HttpStockService{
         return stringResponse;
     }
 
-    public abstract String getDailyURL();
+    /**
+     * Resolve the reques having in mind the resolutions that are provided by the api
+     * @param variation resolution desired to search on the api
+     * @return the corresponding URL that it must use to search given the resolution and the stock
+     */
+    public abstract String resolveRequest(String variation);
 
-    public abstract String getIntraDayURL();
-
-    public abstract String getWeeklyURL();
-
-    public abstract String getMonthlyURL();
-
-    public abstract void setStock(String stock);
+    /**
+     * Set the stock symbol the application is going to search
+     * @param stock the stock symbol the application is going to search
+     */
+    public  void setStock(String stock){
+        this.stock = stock;
+    }
 }
