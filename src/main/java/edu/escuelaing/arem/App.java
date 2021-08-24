@@ -19,6 +19,7 @@ public class App {
      * This main method uses SparkWeb static methods and lambda functions to
      * create a simple web app. It maps the lambda function to the
      * /consult relative URL having a response parsed to JSON
+     * @param args .
      */
     public static void main(String[] args){
         cache = new LRUCache();

@@ -3,7 +3,8 @@ package edu.escuelaing.arem;
 /**
  * Simple cache structure
  * @version 1.0
- * @creds Help by https://www.javatpoint.com/lru-cache-implementation-in-java
+ * @author Angie Medina
+ * @author Help by https://www.javatpoint.com/lru-cache-implementation-in-java
  */
 public class Cache {
     String key;

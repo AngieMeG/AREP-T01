@@ -1,8 +1,6 @@
 package edu.escuelaing.arem;
 
 import org.junit.Test;
-import org.junit.After;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.io.BufferedReader;

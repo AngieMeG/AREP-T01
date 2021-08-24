@@ -3,7 +3,6 @@ package edu.escuelaing.arem;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -21,9 +20,11 @@ public abstract class HttpStockService{
      * 
      * @param variation Especific resolution to consult in the api 
      * @return The response of the api to the searc
-     * @throws IOException
+     * @throws IOException MalformedURLException when the pattern of the URL is Invalid, 
+     *                     if an I/O exception occurs, 
+     * 
      */
-    public String timeSeries(String variation) throws IOException{
+    public String timeSeries(String variation) throws IOException {
         String stringResponse = "None";
         URL obj = new URL(resolveRequest(variation));
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();

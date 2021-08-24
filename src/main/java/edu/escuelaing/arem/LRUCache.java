@@ -5,7 +5,8 @@ import java.util.*;
 /**
  * Simple implementation of a LRU Cache
  * @version 1.0
- * @creds Help by https://www.javatpoint.com/lru-cache-implementation-in-java
+ * @author Angie Medina
+ * @author Help by https://www.javatpoint.com/lru-cache-implementation-in-java
  */
 public class LRUCache{
     static Deque<String> queue = new LinkedList<>();
