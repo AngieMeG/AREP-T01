@@ -6,20 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;700&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
         <link rel="preload" href="css/indexStyles.css" as="style">
         <link href="css/indexStyles.css" rel="stylesheet">
         <title>Global Stock Searcher</title>
     </head>
     <body>
-        <div class="container">
-            <div class="header"> <img src="img/icon.png"> <p class="title">consult stonck</p></div>
-            <div class="input">
-                <div class="info">
-                    <label>Identifier: </label>
-                    <input type="text" id="identifier" placeholder="MSFT"><br>
+        <div class="container center">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="img/icon.png">
                 </div>
-                <button type="submit" id="submit">Let's try!</button>
+                <div class="contentBx">
+                    <h2>Global Stock Searcher</h2>
+                    <div class="size">
+                        <label>Identifier: </label>
+                        <input type="text" id="identifier" placeholder="MSFT"><br>
+                    </div>
+                    <button type="submit" id="submit">Let's try!</button>
+                </div>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

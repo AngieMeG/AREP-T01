@@ -1,6 +1,0 @@
-https://developers.google.com/web/updates/2015/03/introduction-to-fetch
-https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise
-https://stackoverflow.com/questions/47267221/fetch-response-json-and-response-status
-https://www.freecodecamp.org/news/how-to-make-your-first-javascript-chart/
-https://jscharting.com/tutorials/creating-js-charts/
-https://canvasjs.com/jquery-charts/json-data-api-ajax-chart/

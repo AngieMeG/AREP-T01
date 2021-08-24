@@ -9,7 +9,7 @@ fetch("./consult?id="+stockId+"&var="+variation)
     handleInfo();
 }));
 
-var table = function(infoTable) {
+var Table = function(infoTable) {
     var self = this;
     this.keys = ko.observableArray(Object.keys(infoTable));
     this.labels = ko.computed(function() {
@@ -36,7 +36,8 @@ var ViewModel = function () {
     var self = this;
     this.id = ko.observable(stockId);
     this.info = ko.observable(infoStock);
-    this.table = ko.observable(new table(infoStock[Object.keys(infoStock)[1]]));
+    var tableObj = new Table(infoStock[Object.keys(infoStock)[1]]);
+    this.table = ko.observable(tableObj);
     this.updateVariation = function (item, event){
         let target = event.target;
         let selected = false;
@@ -60,7 +61,7 @@ var ViewModel = function () {
         }
     }
     this.updateProperties = function(){
-        self.table(new table(infoStock[Object.keys(infoStock)[1]]));
+        self.table(new Table(infoStock[Object.keys(infoStock)[1]]));
         drawChart();
     }
 }
@@ -68,7 +69,6 @@ var ViewModel = function () {
 function drawChart(){
     var dataPoints = [];
     var options =  {
-        animationEnabled: true,
         theme: "light2",
         title: {
             text: "Close values record"

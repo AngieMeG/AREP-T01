@@ -1,22 +1,24 @@
 :root{
     --main-bg--color: #eeeeee;
     --title--color: #191770;
-    --header--color: #4FC3A1;
-    --active--color: #3c8e76;
-    --active--text--color: #34705e;
+    --header--color: #1e175c;
+    --active--color: black;
+    --active--text--color: black;
     --label--color: #27263d;
-    --row11--color: #4FC3A1;
-    --row12--color: #324960;
+    --row1--color: rgb(0, 114, 97);
+    --row2--color: rgb(32, 32, 32);
     --button--color: #ff4a73;
 }
 
-html{
-    font-family: 'IBM Plex Sans Thai', sans-serif;
+*{
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
+    background-image: url("../img/background.png");
     width: 100vw; height: 100vh;
     margin: 0;
+    font-weight: bolder;
     background-color: var(--main-bg--color);
 }
 
@@ -25,6 +27,7 @@ button{
     outline: none;
     background-color: var(--header--color);
     font-size: 2em;
+    font-weight: 600;
     margin-top: 1em;
     padding: 1% 4% 1% 4%;
     color: white;
@@ -34,13 +37,13 @@ button{
 }
 
 button:hover{
-    color: black; 
+    color: var(--active--text--color);
 
 }
 
 .active{
-    border-bottom: var(--active--color) solid;
-    color: var(--active--text--color);
+    border-bottom: var(--active--color) solid 5px;
+    color: white;
 }
 
 .container{
@@ -93,12 +96,12 @@ p{
 
 .table thead th {
     color: #ffffff;
-    background: #4FC3A1;
+    background: var(--row1--color);
 }
 
 .table thead th:nth-child(odd) {
     color: #ffffff;
-    background: #324960;
+    background: var(--row2--color);
 }
 
 .table tr:nth-child(even) {

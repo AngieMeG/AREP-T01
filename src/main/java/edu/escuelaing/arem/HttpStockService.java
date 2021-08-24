@@ -24,9 +24,9 @@ public abstract class HttpStockService{
      *                     if an I/O exception occurs, 
      * 
      */
-    public String timeSeries(String variation) throws IOException {
+    public String timeSeries(String resolution) throws IOException {
         String stringResponse = "None";
-        URL obj = new URL(resolveRequest(variation));
+        URL obj = new URL(resolveRequest(resolution));
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
@@ -57,7 +57,7 @@ public abstract class HttpStockService{
      * @param variation resolution desired to search on the api
      * @return the corresponding URL that it must use to search given the resolution and the stock
      */
-    public abstract String resolveRequest(String variation);
+    public abstract String resolveRequest(String resolution);
 
     /**
      * Set the stock symbol the application is going to search

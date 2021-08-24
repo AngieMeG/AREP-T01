@@ -1,7 +1,7 @@
 package edu.escuelaing.arem;
 
 /**
- * Http Service that consults with an url (relative to the ALPHA VENTAHGE API)
+ * Http Service that consults with an url (relative to the ALPHA VENTAHGE API) that
  * makes a connection and gets a response
  * @author Angie Medina
  * @version 3.0
@@ -9,12 +9,13 @@ package edu.escuelaing.arem;
 public class AlphaHttpStockService extends HttpStockService {
     private static final String  API_KEY = "0OZUG5LOLD7C1F9N";
 
-    public String resolveRequest(String variation){
+    @Override
+    public String resolveRequest(String resolution){
         String url = "";
-        if(variation.equals("Daily")) url = getDailyURL();
-        else if(variation.equals("IntraDay")) url = getIntraDayURL();
-        else if(variation.equals("Weekly")) url = getWeeklyURL();
-        else if(variation.equals("Monthly")) url = getMonthlyURL();
+        if(resolution.equals("Daily")) url = getDailyURL();
+        else if(resolution.equals("IntraDay")) url = getIntraDayURL();
+        else if(resolution.equals("Weekly")) url = getWeeklyURL();
+        else if(resolution.equals("Monthly")) url = getMonthlyURL();
         return url;
     }
 

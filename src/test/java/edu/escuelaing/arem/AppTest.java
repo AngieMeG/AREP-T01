@@ -114,7 +114,6 @@ public class AppTest{
     /**
      * Test if the request was made to the Daily resolution of the api
      */
-    /*
     @Test
     public void shouldConsultDailyResolution(){
         String urlString = "https://time-series-stock.herokuapp.com";
@@ -138,12 +137,10 @@ public class AppTest{
             fail("Resource: " + urlString + " was not found");
         }
     }
-    */
 
     /**
      * Test if the request was made to the Intra Day resolution of the api
      */
-    /*
     @Test
     public void shouldConsultIntraDayResolution(){
         String urlString = "https://time-series-stock.herokuapp.com";
@@ -167,12 +164,10 @@ public class AppTest{
             fail("Resource: " + urlString + " was not found");
         }
     }
-    */
 
     /**
      * Test if the request was made to the weekly resolution of the api
      */
-    /*
     @Test
     public void shouldConsultWeeklyResolution(){
         String urlString = "https://time-series-stock.herokuapp.com";
@@ -196,7 +191,6 @@ public class AppTest{
             fail("Resource: " + urlString + " was not found");
         }
     }
-    */
 
     /**
      * Test if the request was made to the monthly resolution of the api

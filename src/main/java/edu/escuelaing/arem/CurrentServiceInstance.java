@@ -15,6 +15,7 @@ public class CurrentServiceInstance {
      */
     private CurrentServiceInstance(){
         service = new AlphaHttpStockService();
+        /*service = new IEXHttpStockService();*/
     }
 
     /**
