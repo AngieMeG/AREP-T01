@@ -1,6 +1,6 @@
 :root{
-    --main-bg--color: #e3edf9;
-    --title--color: #342a6b;
+    --main-bg--color: #eeeeee;
+    --title--color: #191770;
     --header--color: #4FC3A1;
     --active--color: #3c8e76;
     --active--text--color: #34705e;
@@ -22,6 +22,7 @@ body{
 
 
 button{
+    outline: none;
     background-color: var(--header--color);
     font-size: 2em;
     margin-top: 1em;
@@ -33,7 +34,8 @@ button{
 }
 
 button:hover{
-    color: black;    
+    color: black; 
+
 }
 
 .active{
@@ -48,7 +50,7 @@ button:hover{
     font-weight: bold;
     letter-spacing: 3px;
     font-size: larger;
-    color: var( --title--color);
+    color: var(--title--color);
 }
 
 p{
@@ -118,4 +120,17 @@ p{
     background-color: #e34368 ;
     border: none;
     transform: translateY(4px);
+}
+
+@media (max-width: 1400px){
+    button{
+        background-color:var(--header--color);
+        font-size: 1.4em;
+        margin-top: 1em;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        width: auto;
+    }
 }

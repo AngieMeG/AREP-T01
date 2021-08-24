@@ -23,6 +23,7 @@ public class App {
         // root is 'src/main/resources', so put files in 'src/main/resources/public'
         staticFiles.location("/public"); // Static files
         get("/consult", "application/json", (req, res) -> consultAPI(req, res));
+
     }
 
     /**

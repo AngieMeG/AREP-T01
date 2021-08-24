@@ -1,6 +1,7 @@
 var stockId = document.cookie.split("=")[1];
 var infoStock;
 var variation = "Daily";
+var chartColor = "#324960";
 
 fetch("./consult?id="+stockId+"&var="+variation)
 .then(response => response.json().then(parsedJson => {
@@ -80,6 +81,7 @@ function drawChart(){
         },
         data: [{
             type: "spline", 
+            color: chartColor,
             yValueFormatString: "$#,###.##",
             dataPoints: dataPoints
         }]
@@ -92,7 +94,8 @@ function addData(data, options, dataPoints) {
         console.log(data[date][Object.keys(data[date])[3]]);
         dataPoints.push({
             x: new Date(date),
-            y: parseFloat(data[date][Object.keys(data[date])[3]])
+            y: parseFloat(data[date][Object.keys(data[date])[3]]),
+            color: chartColor
         });
     }
     $("#chart").CanvasJSChart(options);
