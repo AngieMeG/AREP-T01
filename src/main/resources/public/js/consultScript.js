@@ -69,6 +69,7 @@ var ViewModel = function () {
 function drawChart(){
     var dataPoints = [];
     var options =  {
+        animationEnabled: true,
         theme: "light2",
         title: {
             text: "Close values record"
