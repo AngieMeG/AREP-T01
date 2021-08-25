@@ -53,7 +53,7 @@ public abstract class HttpStockService{
     }
 
     /**
-     * Resolve the reques having in mind the resolutions that are provided by the api
+     * Resolve the request keeping in mind the resolutions that are provided by the api
      * @param variation resolution desired to search on the api
      * @return the corresponding URL that it must use to search given the resolution and the stock
      */

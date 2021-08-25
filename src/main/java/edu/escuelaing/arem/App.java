@@ -14,7 +14,6 @@ import java.util.logging.Logger;
  */
 public class App {
 
-    private static LRUCache cache;
     /**
      * This main method uses SparkWeb static methods and lambda functions to
      * create a simple web app. It maps the lambda function to the
@@ -22,7 +21,6 @@ public class App {
      * @param args .
      */
     public static void main(String[] args){
-        cache = new LRUCache();
         port(getPort());
         // root is 'src/main/resources', so put files in 'src/main/resources/public'
         staticFiles.location("/public"); // Static files
@@ -47,13 +45,13 @@ public class App {
             stockService.setStock(stock);
         }
         String url = stockService.resolveRequest(variation);
-        String cacheResponse = cache.getElementFromCache(url);
+        String cacheResponse = LRUCache.getInstance().getElementFromCache(url);
         if(!cacheResponse.equals("Not exists")){
             response = cacheResponse;
         } else{
             try {
                 response = stockService.timeSeries(variation);
-                cache.putElementInCache(url, response);
+                LRUCache.getInstance().putElementInCache(url, response);
             } catch (IOException e) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
             }

@@ -9,10 +9,23 @@ import java.util.*;
  * @author Help by https://www.javatpoint.com/lru-cache-implementation-in-java
  */
 public class LRUCache{
-    static Deque<String> queue = new LinkedList<>();
-    static Map<String, Cache> map = new HashMap<>();
-    int CACHE_SIZE = 100;
+    private static LRUCache _instance = new LRUCache();
+    private Deque<String> queue;
+    private Map<String, Cache> map;
+    private int CACHE_SIZE = 100;
     
+    private LRUCache(){
+        queue = new LinkedList<>();
+        map = new HashMap<>();
+    }
+    /**
+     * 
+     * @return the current instance of the service
+     */
+    public static LRUCache getInstance() {
+        return _instance;
+    }
+
     /**
      * If the key already exists, fetch data from the cache.
      * @param key String search data
